@@ -104,6 +104,7 @@ export default {
 <style scoped lang="scss">
 #cat-table {
   font-weight: bold;
+  table-layout: fixed
 }
 .cat-pagination {
   position: fixed;
