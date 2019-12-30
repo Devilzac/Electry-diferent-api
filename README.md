@@ -1,4 +1,4 @@
-# Electry test
+# Electry test version con popup incluido
 
 ## Instalar Dependencias
 
@@ -12,11 +12,8 @@ npm install
 npm run serve
 ```
 
-### Para evitar problemas con CORS se ha utilizado en la solicitud con AXIOS al endpoint https://cat-fact.herokuapp.com/facts
+### Api usada https://rapidapi.com/apilayernet/api/rest-countries-v1
 
-```
-https://cors-anywhere.herokuapp.com/
-```
 ### En este repositorio se ha usado Bootstrap vue con marcado de accesibilidad
 
 ```

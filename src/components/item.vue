@@ -18,8 +18,16 @@
         </div>
       </template>
 
-      <template v-slot:cell(user.name)="data">
-        {{data.value.first}} {{data.value.last}}
+      <template v-slot:cell(name)="data" >
+        <b-button v-b-modal="'Traducciones-' + data.value" >{{data.item.name}}</b-button>
+
+        <b-modal :id="'Traducciones-' + data.value"  title="Traducciones" >
+          <p class="my-4">{{data.item.translations.de}}</p>
+          <p class="my-4">{{data.item.translations.es}}</p>
+          <p class="my-4">{{data.item.translations.fr}}</p>
+          <p class="my-4">{{data.item.translations.ja}}</p>
+          <p class="my-4">{{data.item.translations.it}}</p>
+        </b-modal>
       </template>
     </b-table>
 
@@ -39,7 +47,7 @@
 </template>
 
 <script>
-import Axios from 'axios';
+import Axios from "axios";
 
 export default {
   data() {
@@ -47,7 +55,8 @@ export default {
       isBusy: false,
       perPage: 10,
       currentPage: 1,
-      fields: [{ key: 'user.name' }, 'text', 'upvotes'],
+      fields: ["name", "population"],
+      mod: ["translations"],
       items: []
     };
   },
@@ -55,7 +64,7 @@ export default {
     this.isBusy = true;
     this.getInfo()
       .then(response => {
-        //console.log('response: ', response);
+        console.log("response: ", response);
         this.isBusy = false;
       })
       .catch(error => {
@@ -65,9 +74,17 @@ export default {
   methods: {
     async getInfo() {
       const response = await Axios.get(
-        'https://cors-anywhere.herokuapp.com/https://cat-fact.herokuapp.com/facts'
+        "https://restcountries-v1.p.rapidapi.com/all",
+        {
+          method: "GET",
+          headers: {
+            "x-rapidapi-host": "restcountries-v1.p.rapidapi.com",
+            "x-rapidapi-key":
+              "50464f74ecmsh3921e87c6e4c45cp1f6109jsn03ea370a7b01"
+          }
+        }
       );
-      this.items = await response.data.all;
+      this.items = await response.data;
       return this.items;
     }
   },
