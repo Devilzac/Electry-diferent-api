@@ -1,5 +1,5 @@
 <template>
-  <div class="overflow-auto">
+  <div class="cont overflow-auto">
     <b-table
       id="cat-table"
       borderless
@@ -52,7 +52,7 @@ export default {
   data() {
     return {
       isBusy: false,
-      perPage: 20,
+      perPage: 15,
       currentPage: 1,
       fields: ["name", "population"],
       mod: ["translations"],
@@ -101,6 +101,19 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.cont::-webkit-scrollbar {
+    width: 5px;
+}
+.cont::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+.cont::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.3);
+  outline: 1px solid rgba(0,0,0,0.5);
+    border-radius: 10px;
+}
+
 #cat-table {
   font-weight: bold;
   table-layout: fixed
