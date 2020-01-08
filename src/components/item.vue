@@ -25,11 +25,31 @@
         <b-button v-b-modal="'Traducciones-' + data.value" >{{data.item.name}}</b-button>
 
         <b-modal :id="'Traducciones-' + data.value"  title="Traducciones" >
-          <p class="my-4"><a :href="'https://www.google.com/search?q='+ data.item.translations.de">{{data.item.translations.de}}</a></p>
-          <p class="my-4"><a :href="'https://www.google.com/search?q='+ data.item.translations.es">{{data.item.translations.es}}</a></p>
-          <p class="my-4"><a :href="'https://www.google.com/search?q='+ data.item.translations.fr">{{data.item.translations.fr}}</a></p>
-          <p class="my-4"><a :href="'https://www.google.com/search?q='+ data.item.translations.ja">{{data.item.translations.ja}}</a></p>
-          <p class="my-4"><a :href="'https://www.google.com/search?q='+ data.item.translations.it">{{data.item.translations.it}}</a></p>
+          <p class="my-4">
+              <a target="_blank" :href="'https://www.google.com/search?q='+ data.item.translations.de">
+                {{data.item.translations.de}}
+              </a>
+          </p>
+          <p class="my-4">
+              <a target="_blank" :href="'https://www.google.com/search?q='+ data.item.translations.es">
+                {{data.item.translations.es}}
+              </a>
+          </p>
+          <p class="my-4">
+              <a target="_blank" :href="'https://www.google.com/search?q='+ data.item.translations.fr">
+                {{data.item.translations.fr}}
+              </a>
+          </p>
+          <p class="my-4">
+              <a target="_blank" :href="'https://www.google.com/search?q='+ data.item.translations.ja">
+                {{data.item.translations.ja}}
+              </a>
+          </p>
+          <p class="my-4">
+              <a target="_blank" :href="'https://www.google.com/search?q='+ data.item.translations.it">
+                {{data.item.translations.it}}
+              </a>
+          </p>
         </b-modal>
       </template>
     </b-table>
