@@ -18,6 +18,9 @@
         </div>
       </template>
 
+      <template v-slot:cell(population)="data" >
+       <span class="population">{{data.item.population}}</span>
+      </template>
       <template v-slot:cell(name)="data" >
         <b-button v-b-modal="'Traducciones-' + data.value" >{{data.item.name}}</b-button>
 
@@ -37,10 +40,6 @@
       :total-rows="rows"
       :per-page="perPage"
       align="fill"
-      first-text="Primero"
-      prev-text="Anterior"
-      next-text="Siguiente"
-      last-text="Ultimo"
       aria-controls="cat-table"
     ></b-pagination>
   </div>
@@ -53,7 +52,7 @@ export default {
   data() {
     return {
       isBusy: false,
-      perPage: 10,
+      perPage: 20,
       currentPage: 1,
       fields: ["name", "population"],
       mod: ["translations"],
@@ -111,5 +110,26 @@ export default {
   bottom: 0;
   width: 100%;
   box-shadow: black 1px 0px 5px;
+  margin:3px 0;
+}
+.overflow-auto {
+    max-height: calc(100vh - 45px);
+}
+
+  button {
+    width: 200px;
+  }
+@media only screen and (max-width: 600px) {
+  body tbody {
+    button, .population{
+      font-size: 12px;
+    }    
+  }
+  button {
+    width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 </style>

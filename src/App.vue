@@ -32,7 +32,7 @@
 }
 
 body {
-  background: url('https://qsnoticias.mx/wp-content/uploads/2019/05/301790.jpg');
+  background: url('https://icdn.2cda.pl/obr/oryginalne/560ebfdbd0110da6358d1c830ce4ff38.jpg');
   background-size: cover;
   background-position: center;
 }
