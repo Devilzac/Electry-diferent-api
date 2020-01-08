@@ -151,11 +151,18 @@ export default {
 
   button {
     width: 200px;
+    transition: all 0.5s;
+  }
+   body tbody {
+    button, .population{
+      transition: all 0.5s;
+    }    
   }
 @media only screen and (max-width: 600px) {
   body tbody {
     button, .population{
       font-size: 12px;
+      transition: all 0.5s;
     }    
   }
   button {
@@ -163,6 +170,7 @@ export default {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    transition: all 0.5s;
   }
 }
 </style>
