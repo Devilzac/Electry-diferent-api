@@ -18,37 +18,42 @@
         </div>
       </template>
 
-      <template v-slot:cell(population)="data" >
-       <span class="population">{{data.item.population}}</span>
+      <template v-slot:cell(population)="data">
+        <span class="population">{{data.item.population}}</span>
       </template>
-      <template v-slot:cell(name)="data" >
-        <b-button v-b-modal="'Traducciones-' + data.value" >{{data.item.name}}</b-button>
+      <template v-slot:cell(name)="data">
+        <b-button v-b-modal="'Traducciones-' + data.value">{{data.item.name}}</b-button>
 
-        <b-modal :id="'Traducciones-' + data.value"  title="Traducciones" >
+        <b-modal :id="'Traducciones-' + data.value" title="Traducciones">
           <p class="my-4">
-              <a target="_blank" :href="'https://www.google.com/search?q='+ data.item.translations.de">
-                {{data.item.translations.de}}
-              </a>
+            <a
+              target="_blank"
+              :href="'https://www.google.com/search?q='+ data.item.translations.de"
+            >{{data.item.translations.de}}</a>
           </p>
           <p class="my-4">
-              <a target="_blank" :href="'https://www.google.com/search?q='+ data.item.translations.es">
-                {{data.item.translations.es}}
-              </a>
+            <a
+              target="_blank"
+              :href="'https://www.google.com/search?q='+ data.item.translations.es"
+            >{{data.item.translations.es}}</a>
           </p>
           <p class="my-4">
-              <a target="_blank" :href="'https://www.google.com/search?q='+ data.item.translations.fr">
-                {{data.item.translations.fr}}
-              </a>
+            <a
+              target="_blank"
+              :href="'https://www.google.com/search?q='+ data.item.translations.fr"
+            >{{data.item.translations.fr}}</a>
           </p>
           <p class="my-4">
-              <a target="_blank" :href="'https://www.google.com/search?q='+ data.item.translations.ja">
-                {{data.item.translations.ja}}
-              </a>
+            <a
+              target="_blank"
+              :href="'https://www.google.com/search?q='+ data.item.translations.ja"
+            >{{data.item.translations.ja}}</a>
           </p>
           <p class="my-4">
-              <a target="_blank" :href="'https://www.google.com/search?q='+ data.item.translations.it">
-                {{data.item.translations.it}}
-              </a>
+            <a
+              target="_blank"
+              :href="'https://www.google.com/search?q='+ data.item.translations.it"
+            >{{data.item.translations.it}}</a>
           </p>
         </b-modal>
       </template>
@@ -122,55 +127,48 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .cont::-webkit-scrollbar {
-    width: 5px;
+  width: 5px;
 }
 .cont::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
 }
 .cont::-webkit-scrollbar-thumb {
-  background-color: rgba(0,0,0,0.3);
-  outline: 1px solid rgba(0,0,0,0.5);
-    border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+  outline: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
 }
 
 #cat-table {
   font-weight: bold;
-  table-layout: fixed
+  table-layout: fixed;
 }
 .cat-pagination {
   position: fixed;
   bottom: 0;
   width: 100%;
   box-shadow: black 1px 0px 5px;
-  margin:3px 0;
+  margin: 3px 0;
 }
 .overflow-auto {
-    max-height: calc(100vh - 45px);
+  max-height: calc(100vh - 45px);
 }
 
-  button {
-    width: 200px;
-    transition: all 0.5s;
-  }
-   body tbody {
-    button, .population{
-      transition: all 0.5s;
-    }    
-  }
+button {
+  width: 200px;
+}
 @media only screen and (max-width: 600px) {
   body tbody {
-    button, .population{
+    button,
+    .population {
       font-size: 12px;
-      transition: all 0.5s;
-    }    
+    }
   }
   button {
-    width: 100px;
+    width: 100%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    transition: all 0.5s;
   }
 }
 </style>
